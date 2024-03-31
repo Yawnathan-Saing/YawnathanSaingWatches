@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Purchase</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+<style>
+    *{
+        font-family: 'Times New Roman', Times, serif;
+        margin: 0; padding: 0;
+        box-sizing: border-box;
+        outline: none; border: none;
+        text-transform: capitalize;
+        transition: all .2s linear;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        min-height: 100vh;
+        background: radial-gradient(#fff,#7e7ef8);
+        padding-bottom: 70px;
+    }
+    .container form{
+        padding: 20px;
+        width: 700px;
+        background: #fff;
+        box-shadow: 0 5px 10px gray;
+    }
+    .container form .row{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .container form .row .col{
+        flex: 1 1 250px;
+    }
+    .container form .row .col .title{
+        font-size: 20px;
+        color: #000033;
+        padding-bottom: 5px;
+        text-transform: uppercase;
+    }
+    .container form .row .col .inputbox{
+        margin: 15px 0;
+    }
+    .container form .row .col .inputbox span{
+        margin-bottom: 10px;
+        display: block;
+    }
+    .container form .row .col .inputbox input{
+        width: 100%;
+        border: 1px solid skyblue;
+        padding: 10px 15px;
+        text-transform: none;
+    }
+    .container form .row .col .inputbox input:focus{
+        border: 1px solid #000033;
+    }
+    .container form .row .col .inputbox select{
+        width: fit-content;
+        border: 1px solid skyblue;
+        padding: 10px 15px;
+        text-transform: none;
+    }
+
+    .container form .row .col .flex{
+        display: flex;
+        gap: 15px;
+    }
+    .container form .row .col .flex .inputbox{
+        margin-top: 5px;
+    }
+    .container form .row .col .inputbox img{
+        height: 34px;
+        filter: drop-shadow(0 0 1px Black);
+    }
+    .container form .submit-btn{
+        width: 100%;
+        padding: 12px;
+        font-size: 17px;
+        background: #000033;
+        color: #fff;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+    .container form .submit-btn:hover{
+        background: #3838f8;
+    }
+    
+    
+    
+
+    
+</style>
+
+
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <div class="row">
+
+                <div class="col">
+                    <h3 class="title">Mailing Address</h3>
+
+                    <div class="inputbox">
+                        <span>Full name :</span>
+                        <input type="text" placeholder="Full name" required>
+                    </div>
+                    <div class="inputbox">
+                        <span>Email :</span>
+                        <input type="email" placeholder="Email" required>
+                        <div class="inputbox">
+                            <span>Product Name :</span>
+                            <select name="Product" id="">
+                                <option value="Black Sunburst">Black Sunburst</option>
+                                <option value="Blue Sunburst">Blue Sunburst</option>
+                                <option value="Green Sunburst">Green Sunburst</option>
+                                <option value="Red Sunburst">Red Sunburst</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="inputbox">
+                        <span>Address :</span>
+                        <input type="text" placeholder="street - locality - city - state - country">
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="inputbox">
+                            <span>House Number :</span>
+                            <input type="text" placeholder="House/Appartment No.">
+                        </div>
+                        <div class="inputbox">
+                            <span>Zip code :</span>
+                            <input type="text" placeholder="123 456">
+                        </div>
+    
+                    </div>
+                </div>
+
+                <div class="col">
+                    <h3 class="title">Payment</h3>
+
+                    <div class="inputbox">
+                        <span>Cards accepted :</span>
+                        <img src="Payment card.jpg">
+                    </div>
+                    <div class="inputbox">
+                        <span>Name on card :</span>
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="inputbox">
+                        <span>Credit card number :</span>
+                        <input type="number" placeholder="1111-2222-3333">
+                    </div>
+                    <div class="inputbox">
+                        <span>Exp month :</span>
+                        <input type="text" placeholder="January">
+                    </div>
+                    <div class="flex">
+                        <div class="inputbox">
+                            <span>Exp year :</span>
+                            <input type="number" placeholder="2025">
+                        </div>
+                        <div class="inputbox">
+                            <span>CVV :</span>
+                            <input type="text" placeholder="1234">
+                        </div>
+    
+                    </div>
+                </div>
+
+            </div>
+
+            <input onclick="checker()" type="submit" value="Checkout" class="submit-btn">
+        </form>
+    </div>
+    <script>
+        function checker() {
+            var result = confirm('Are you sure you want to purchase this item?');
+            if (result == false) {
+                event.preventDefault();}
+            }
+    
+    </script>
+
+</body>
+</html>
